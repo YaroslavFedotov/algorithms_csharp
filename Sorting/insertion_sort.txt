@@ -1,4 +1,4 @@
-public void InsertionSort(int[] array)
+static void InsertionSort(int[] array)
 {
     for (int i = 1; i < array.Length; i++)
     {

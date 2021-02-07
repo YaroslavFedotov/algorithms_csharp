@@ -1,4 +1,4 @@
-public static void sorting(double[] arr, long first, long last) 
+static void sorting(double[] arr, long first, long last) 
 {
     double p = arr[(last - first)/2 + first];
     double temp;

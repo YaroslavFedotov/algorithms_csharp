@@ -1,4 +1,4 @@
-public void SelectionSort(int[] arr)
+static void SelectionSort(int[] arr)
 {
     int min, temp;
     int length = arr.Length;

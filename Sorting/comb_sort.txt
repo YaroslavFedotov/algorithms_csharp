@@ -1,4 +1,4 @@
-public static int[] combSort(int[] input)
+static int[] combSort(int[] input)
 {
     double gap = input.Length;
     bool swaps = true;
