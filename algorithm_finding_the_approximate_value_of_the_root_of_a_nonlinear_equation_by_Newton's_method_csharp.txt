@@ -1,0 +1,38 @@
+using System;
+
+namespace Newtons_method
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double a = -2.0, b = -1.0, e = 0.0000000001, x, xold = 0.0;
+			double a, b, e, x, xold = 0.0;
+            Console.Write("введите левый конец промежутка");
+            a = Convert.ToDouble(Console.ReadLine());
+            Console.Write("введите правый конец промежутка");
+            b = Convert.ToDouble(Console.ReadLine());
+            Console.Write("введите искомую точность");
+            e = Convert.ToDouble(Console.ReadLine());
+			// если 0 < f(x) * f''(x)
+            if (0 < (2.0 * (double)Math.Pow(a, 2.0) - 5.0 - (double)Math.Pow(2, a)) 
+			* ((double)Math.Log(2) * (double)Math.Log(-2)) - (double)Math.Pow(2, a) + 4)
+            {
+                x = a;
+            }
+            else
+            {
+                x = b;
+            }
+            while (e < Math.Abs(x - xold))
+            {
+                xold = x;
+				// x1 = X0 - f(x0) / f'(X0)
+                x -= ((2.0 * (double)Math.Pow(x, 2.0) - 5.0 - (double)Math.Pow(2, x)) 
+				/ (-(double)Math.Pow(2.0, x) * (double)Math.Log(2) + 4.0 * x));
+                Console.WriteLine("значение x = {0}  || разница = {1}", x, x - xold);
+                Console.ReadKey();
+            }
+        }
+    }
+}
